@@ -8,9 +8,8 @@ readme = "README.md"
 packages = [{include = "openshift_artifact_scraper_py"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 requests = "^2.31.0"
-BeautifulSoup = "^3.2.2"
 beautifulsoup4 = "^4.12.2"
 requests5 = "^1.0.0"
 
