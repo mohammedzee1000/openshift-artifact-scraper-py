@@ -21,8 +21,5 @@ def __build_rhcos_version_url(arch: str, version: str) -> str:
 
 
 def get_sub_versions(arch: str, version: str) -> list[str]:
-    versions = []
     data = requests.get(__build_rhcos_version_url(arch, version))
     return [x for x in __extract_a_hrefs(data.text) if x not in [".."]]
-
-# def _build_rhcos_version_url(base_url: str, version: str)
