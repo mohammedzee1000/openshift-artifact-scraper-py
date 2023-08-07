@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "openshift-artifact-scraper-py"
+name = "openshift_artifact_scraper_py"
 version = "0.1.0"
 description = "This is a simple tool that scrapes information related to Openshift Release Artifacts"
 authors = ["Mohammed Zeeshan Ahmed <mohammed.zee1000@gmail.com>"]
