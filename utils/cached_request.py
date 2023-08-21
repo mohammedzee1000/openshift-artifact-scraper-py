@@ -3,7 +3,11 @@ from datetime import timedelta
 import requests_cache
 from requests import auth
 
-request = requests_cache.CachedSession('openshift_artifact_cache', expire_after=timedelta(days=1))
+from utils.cache import get_cache_dir
+
+cache_file_location = os.getenv("OPENSHIFT_ARTIFACT_SCRAPPER_CACHE_DIR") or os.pathsep.join([str(get_cache_dir()), "openshift-artifact-scraper"])
+
+request = requests_cache.CachedSession(cache_file_location, expire_after=timedelta(days=1))
 quay_username = os.getenv("QUAY_USER")
 quay_token = os.getenv("QUAY_TOKEN")
 if quay_username == "" or quay_token == "":
@@ -11,4 +15,4 @@ if quay_username == "" or quay_token == "":
     exit(1)
 a = auth.HTTPDigestAuth
 basic = auth.HTTPBasicAuth(quay_username, quay_token)
-authenticated_req = requests_cache.CachedSession('openshift_artifact_cache', auth=basic, expire_after=timedelta(days=1))
+authenticated_req = requests_cache.CachedSession(cache_file_location, auth=basic, expire_after=timedelta(days=3))

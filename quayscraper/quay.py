@@ -1,6 +1,6 @@
 import json
 
-from cached_request import authenticated_req
+from utils.cached_request import authenticated_req
 
 
 def __get_ocp_release_dev_tags_url() -> str:
