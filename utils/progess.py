@@ -1,7 +1,7 @@
 import itertools
+import sys
 import threading
 import time
-import sys
 
 
 class ProgressMessage:

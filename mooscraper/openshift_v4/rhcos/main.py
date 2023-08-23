@@ -1,12 +1,12 @@
-from utils.cached_request import request
 from mooscraper.moocore import MajorVersionArtifacts, VersionedArtifacts
 from mooscraper.mooutils import extract_a_hrefs
-from mooscraper.openshift_v4.rhcos.artifact_data import RHCOSReleasedArtifacts, RHCOSPreReleaseArtifacts, \
+from mooscraper.openshift_v4.rhcos.types import RHCOSReleasedArtifacts, RHCOSPreReleaseArtifacts, \
     RHCOSReleasedVersionedArtifacts
 from mooscraper.openshift_v4.rhcos.url_gen import get_rhcos_base_url_for_arch, get_rhcos_url_arch_and_version, \
     get_rhcos_url_released_non_latest_arch_version_and_subversion, get_rhcos_url_prerelease, \
     get_rhcos_url_prerelease_subversion
 from mooscraper.openshift_v4.rhcos.url_gen import get_rhcos_url_latest_arch
+from utils.cached_request import request
 
 
 def get_released_artifacts(arch: str) -> RHCOSReleasedArtifacts:
