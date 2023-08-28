@@ -13,7 +13,9 @@ requests = "^2.31.0"
 beautifulsoup4 = "^4.12.2"
 requests5 = "^1.0.0"
 requests-cache = "^1.1.0"
-docker-registry = "^0.9.1"
+art = "^6.0"
+rich = "^13.5.2"
+packaging = "^23.1"
 
 
 [build-system]

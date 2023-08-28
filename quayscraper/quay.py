@@ -1,6 +1,6 @@
 import json
 
-from utils.cached_request import authenticated_req
+from utils.cached_request import authenticated_request
 
 
 def __get_ocp_release_dev_tags_url() -> str:
@@ -12,6 +12,6 @@ def get_ocp_release_image_repo_url(tag: str):
 
 
 def get_release_tags() -> list[str]:
-    data = authenticated_req.get(__get_ocp_release_dev_tags_url())
+    data = authenticated_request.get(__get_ocp_release_dev_tags_url())
     data_dict = json.loads(data.text)
     return list(data_dict["tags"].keys())
